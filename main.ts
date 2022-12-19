@@ -4,23 +4,25 @@ let arr = [[0, 1, 1, 2],
 
 let totalCost = (data: number[][]): number => {
     let cost = 0;
-    let i = 0;
-    let j = 0;
+
     while (data) {
+        let i = 0;
         while (i < data.length) {
+            let j = 0;
             while (j < data[i].length) {
                 if (data[i][j] != 0) {
                     cost += data[i][j];
+                    j++
                 }
-                j++;
-            };
+            }
+            i++;
+            data.unshift()
+            totalCost(data)
         }
-        i++;
-        data.unshift()
-        totalCost(data)
     }
     return cost;
 }
+
 
 totalCost(arr)
 
